@@ -8,14 +8,18 @@
       </div>
       
       <nav class="space-y-4">
-        <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-primary-500 text-white">
-          <span class="text-lg">📊</span>
-          <span class="font-medium">Dashboard</span>
-        </a>
-        <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-secondary hover:bg-dark-accent transition-colors">
-          <span class="text-lg">📋</span>
-          <span>Canais</span>
-        </a>
+          <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-primary-500 text-white">
+            <span class="text-lg">📊</span>
+            <span class="font-medium">Dashboard</span>
+          </a>
+          <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-secondary hover:bg-dark-accent transition-colors">
+            <span class="text-lg">📋</span>
+            <span>Canais</span>
+          </a>
+          <a href="/profile" class="flex items-center space-x-3 p-3 rounded-lg text-secondary hover:bg-dark-accent transition-colors">
+            <span class="text-lg">👤</span>
+            <span>Perfil</span>
+          </a>
       </nav>
     </div>
 

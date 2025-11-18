@@ -56,7 +56,7 @@ const handleRegister = async (data: any) => {
   if (!result.success) {
     errorMessage.value = result.error || 'Erro ao criar conta'
   } else {
-    await navigateTo('/dashboard')
+    await navigateTo(`/verify-email?email=${encodeURIComponent(data.email)}`)
   }
 }
 
