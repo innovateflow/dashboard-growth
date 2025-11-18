@@ -1,41 +1,18 @@
 <template>
   <div class="min-h-screen bg-dark-background">
     <!-- Sidebar -->
-    <div class="fixed left-0 top-0 h-full w-64 bg-dark-primary border-r border-dark p-6">
-      <div class="mb-8">
-        <h1 class="text-heading-md font-heading font-bold text-primary">SMBOT</h1>
-        <p class="text-body-sm text-secondary">Dashboard</p>
-      </div>
-      
-      <nav class="space-y-4">
-          <a href="#" class="flex items-center space-x-3 p-3 rounded-lg bg-primary-500 text-white">
-            <span class="text-lg">📊</span>
-            <span class="font-medium">Dashboard</span>
-          </a>
-          <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-secondary hover:bg-dark-accent transition-colors">
-            <span class="text-lg">📋</span>
-            <span>Canais</span>
-          </a>
-          <a href="/profile" class="flex items-center space-x-3 p-3 rounded-lg text-secondary hover:bg-dark-accent transition-colors">
-            <span class="text-lg">👤</span>
-            <span>Perfil</span>
-          </a>
-      </nav>
-    </div>
+    <SidebarMenu />
 
     <!-- Main Content -->
-    <div class="ml-64 p-6">
+    <div :class="[minimized ? 'ml-20' : 'ml-64', 'p-6', 'transition-all', 'duration-300']">
       <!-- Header -->
       <div class="flex justify-between items-center mb-8">
         <div>
-          <h1 class="text-heading-xl font-heading font-bold text-primary">Dashboard Growth</h1>
+          <h1 class="text-heading-xl font-heading font-bold text-primary">Dashboard</h1>
           <p class="text-body-base text-secondary">Olá, Administrador! Bem-vindo ao seu Dashboard.</p>
         </div>
         <div class="flex items-center gap-4">
           <span class="text-body-sm text-secondary">Hoje</span>
-          <button @click="handleLogout" class="btn-secondary px-4 py-2 rounded-lg font-semibold text-white" :disabled="loading">
-            Logout
-          </button>
         </div>
       </div>
 
@@ -231,8 +208,12 @@
 </template>
 
 <script setup lang="ts">
+import SidebarMenu from '~/components/SidebarMenu.vue'
 import { useAuth } from '~/composables/useAuth'
+import { useState } from '#imports'
 const { signOut, loading } = useAuth()
+
+const minimized = useState('sidebar-minimized', () => false)
 
 const handleLogout = async () => {
   await signOut()
