@@ -7,12 +7,14 @@
     <div :class="[minimized ? 'ml-20' : 'ml-64', 'p-6', 'transition-all', 'duration-300']">
       <!-- Header -->
       <div class="flex justify-between items-center mb-8">
-        <div>
-          <h1 class="text-heading-xl font-heading font-bold text-primary">Dashboard</h1>
-          <p class="text-body-base text-secondary">Olá, Administrador! Bem-vindo ao seu Dashboard.</p>
-        </div>
-        <div class="flex items-center gap-4">
-          <span class="text-body-sm text-secondary">Hoje</span>
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-start w-full">
+          <div>
+            <h1 class="text-heading-xl font-heading font-bold text-primary">Dashboard</h1>
+            <p class="text-body-base text-secondary">Olá, Administrador! Bem-vindo ao seu Dashboard.</p>
+          </div>
+          <div class="md:mt-0 mt-4">
+            <DashboardFilter />
+          </div>
         </div>
       </div>
 
