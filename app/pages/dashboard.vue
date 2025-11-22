@@ -1,10 +1,6 @@
 <template>
-  <div class="min-h-screen bg-dark-background">
-    <!-- Sidebar -->
-    <SidebarMenu />
-
-    <!-- Main Content -->
-    <div :class="[minimized ? 'ml-20' : 'ml-64', 'p-6', 'transition-all', 'duration-300']">
+<NuxtLayout name="default-layout">
+  <div>
       <!-- Header -->
       <div class="flex justify-between items-center mb-8">
         <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-start w-full">
@@ -67,8 +63,8 @@
       </div>
 
       <!-- Charts Section -->
-    </div>
   </div>
+</NuxtLayout>
 </template>
 
 <script setup lang="ts">
