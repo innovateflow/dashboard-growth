@@ -6,7 +6,7 @@
         <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4 items-start w-full">
           <div>
             <h1 class="text-heading-xl font-heading font-bold text-primary">Dashboard</h1>
-            <p class="text-body-base text-secondary">Olá, Administrador! Bem-vindo ao seu Dashboard.</p>
+            <p class="text-body-base text-secondary">Olá, Tarini! Bem-vindo ao seu Dashboard Growth.</p>
           </div>
           <div class="md:mt-0 mt-4">
             <DashboardFilter />
