@@ -71,7 +71,15 @@
 import SidebarMenu from '~/components/SidebarMenu.vue'
 import { useAuth } from '~/composables/useAuth'
 import { useState } from '#imports'
-const { signOut, loading } = useAuth()
+
+const { user, signOut, loading } = useAuth()
+
+// Proteger a rota - redirecionar para login se não estiver autenticado
+watch(user, (newUser) => {
+  if (newUser === null) {
+    navigateTo('/login')
+  }
+}, { immediate: true })
 
 const minimized = useState('sidebar-minimized', () => false)
 

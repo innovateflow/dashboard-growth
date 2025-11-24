@@ -179,6 +179,18 @@
 </template>
 
 <script setup lang="ts">
+import { useAuth } from '~/composables/useAuth'
+
+// Verificar se o usuário está logado e redirecionar para dashboard
+const { user } = useAuth()
+
+// Redirecionar para dashboard se o usuário estiver logado
+watch(user, (newUser) => {
+  if (newUser) {
+    navigateTo('/dashboard')
+  }
+}, { immediate: true })
+
 // Configuração da página
 useHead({
   title: 'Typography & Colors Demo - Nuxt Project',
